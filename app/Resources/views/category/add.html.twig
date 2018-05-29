@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block menu %}
+
+<li>
+	<a class="nav-link" href="{{ path('listProduct') }}">Products</a>
+</li>
+
+{% endblock %}
+
+{% block body %}
+
+<div id="container">
+	<form name="form" action="{{ path('addCategory') }}" method="post">
+		<div id="form">
+			<div>
+				<label for="title" class="required">Title</label>
+				<input id="title" name="title" required="required" placeholder="" type="text">
+			</div>
+			<div>
+				<label for="parent">Category Parent</label>
+				<select id="parent" name="parent">
+					{% for category in categories %}
+						<option value="{{ category }}">{{ category }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div>
+				<button type="submit" id="submit" name="submit">Submit</button>
+			</div>
+			<input id="_token" name="_token" value="rTEXNjZngujOySYFCCaOumoOL0UZ2DMyUnjzx6PF53M" type="hidden">
+		</div>
+	</form>
+</div>
+
+{% endblock %}

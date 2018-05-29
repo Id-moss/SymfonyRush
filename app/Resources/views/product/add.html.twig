@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block menu %}
+
+<li>
+	<a class="nav-link" href="{{ path('listProducts') }}">Products</a>
+</li>
+
+{% endblock %}
+
+{% block body %}
+
+<div id="container">
+	{{ form_start(addForm) }}
+		
+		{{ form_widget(addForm) }}
+
+	{{ form_end(addForm) }}
+</div>
+
+{% endblock %}
